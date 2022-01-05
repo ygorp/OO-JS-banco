@@ -46,4 +46,24 @@ class ContaCorrente {
   }
 }
 
-class 
+class ContaPoupanca {
+  constructor(agencia, numero, saldo) {
+    super(agencia, numero, saldo);
+    this.tipo = 'poupança';
+  }
+}
+
+class ContaUniversitaria {
+  constructor(agencia, numero, saldo) {
+    super(agencia, numero, saldo);
+    this.tipo = 'universitária';
+  }
+
+  sacar(valor) {
+    if(valor > 500) {
+      return 'Operação negada!';
+    }
+
+    this._saldo = this._saldo - valor;
+  }
+}
